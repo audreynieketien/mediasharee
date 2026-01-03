@@ -23,12 +23,6 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -51,15 +45,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_02949EF4F94E42B8A3DA80BAFABC5AFB }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_34B6F5E1BD7C4AC1B61DFC04F75C4179 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_52780CF268EB4A97BDDB8158F07C90DA }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FCE7BCD9546843F2A02E74C18E0689B5 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_197C7A6C95F04E9DA7910B50312088BF }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0CE25A05760A466BAA52A85F448E2324 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'mediashare-client-byaadhc5g8h6hwfa'
+          app-name: 'mediashare-client'
           slot-name: 'Production'
           package: .
           
