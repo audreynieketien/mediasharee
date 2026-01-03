@@ -6,7 +6,7 @@ export const INITIAL_POSTS: Post[] = [
         mediaType: 'image',
         url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop',
         title: 'City Sunset',
-        caption: 'The way the light hits the buildings here is incredible.',
+        caption: 'The way the sun hits the buildings here is incredible.',
         tags: ['urban', 'architecture', 'goldenhour'],
         creator: { id: '2', username: 'alex_shots', email: 'alex@example.com', avatarUrl: 'https://i.pravatar.cc/150?u=alex', role: 'consumer' },
         stats: { likes: 120, hasLiked: true },
