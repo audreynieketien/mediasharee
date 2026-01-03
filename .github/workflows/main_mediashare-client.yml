@@ -25,6 +25,8 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          VITE_API_BASE_URL: 'https://mediashare-b5feayb6a3hsgfck.spaincentral-01.azurewebsites.net/api'
 
       - name: Create Zip File
         run: |
