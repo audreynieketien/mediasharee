@@ -148,23 +148,26 @@ export default function CreatorDashboard() {
                 </div>
               )}
 
-              <div 
-                className="border-2 border-dashed rounded-lg p-10 flex flex-col items-center justify-center text-muted-foreground hover:bg-muted/50 transition-colors cursor-pointer relative"
-              >
-                  <input 
-                    type="file" 
-                    className="absolute inset-0 opacity-0 cursor-pointer" 
-                    accept="image/*,video/*"
-                    onChange={handleFileChange}
-                    disabled={isUploading}
-                  />
-                  <Upload className="h-10 w-10 mb-2" />
-                  <p>{file ? file.name : "Drag & drop or click to upload"}</p>
-                  <p className="text-xs">Supports Image and Video</p>
+              <div className="space-y-2">
+                <Label>Media <span className="text-red-500">*</span></Label>
+                <div 
+                  className="border-2 border-dashed rounded-lg p-10 flex flex-col items-center justify-center text-muted-foreground hover:bg-muted/50 transition-colors cursor-pointer relative"
+                >
+                    <input 
+                      type="file" 
+                      className="absolute inset-0 opacity-0 cursor-pointer" 
+                      accept="image/*,video/*"
+                      onChange={handleFileChange}
+                      disabled={isUploading}
+                    />
+                    <Upload className="h-10 w-10 mb-2" />
+                    <p>{file ? file.name : "Drag & drop or click to upload"}</p>
+                    <p className="text-xs">Supports Image and Video</p>
+                </div>
               </div>
 
               <div className="grid gap-2">
-                <Label htmlFor="title">Title</Label>
+                <Label htmlFor="title">Title <span className="text-red-500">*</span></Label>
                 <Input 
                     id="title" 
                     placeholder="Summer Vibes" 
@@ -217,7 +220,7 @@ export default function CreatorDashboard() {
               <Button 
                 className="w-full" 
                 onClick={handlePublish}
-                disabled={isUploading || !file}
+                disabled={isUploading || !file || !title.trim()}
               >
                 {isUploading ? 'Uploading...' : 'Publish Post'}
               </Button>
